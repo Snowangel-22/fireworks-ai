@@ -1,0 +1,3 @@
+- [User: Angela, Fireworks AI PM candidate](user_angela.md) — preparing for 2-hour vibe-coded PM take-home
+- [Project: Fireworks PM prep kit](project_fireworks_prep.md) — completed prep/ folder under claude-code-projs/fireworks-ai-prep/
+- [Feedback: terse responses, no trailing summaries](feedback_style.md) — match brevity to task; section-headers-only when asked
