@@ -1,0 +1,5 @@
+Take home specifics: You’ll get a live assignment schedule sent to your email at the time of your choosing. You’ll have up to 2 hours at home to complete this assignment before needing to email it to us. You’ll be vibe coding a tool, so before the assignment starts, please ensure you have a vibe coding set-up prepared.
+
+Onsite, you’ll have 2 hours and 15 minutes of discussion. It'll be a take home discussion, product execution interview and behavioral/retro. Familiarity with the Fireworks product will be a plus for this round still. 
+
+The deliverable will be a usable prototype + a 1 page report. The prototype can be shared however you'd want (code directly, hosted, etc). You would have creative liberty for whatever makes sense to you but many people end up creating a clickable app with a frontend. 
