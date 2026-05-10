@@ -22,6 +22,20 @@ export default defineConfig(({ mode }) => {
             })
           },
         },
+        '/api/claude': {
+          target: 'https://api.anthropic.com',
+          changeOrigin: true,
+          rewrite: () => '/v1/messages',
+          configure: (proxy) => {
+            proxy.on('proxyReq', (proxyReq) => {
+              proxyReq.setHeader('x-api-key', env.ANTHROPIC_API_KEY)
+              proxyReq.setHeader('anthropic-version', '2023-06-01')
+              proxyReq.setHeader('Content-Type', 'application/json')
+              proxyReq.setHeader('anthropic-dangerous-direct-browser-access', 'true')
+              proxyReq.removeHeader('origin')
+            })
+          },
+        },
       },
     },
   }
