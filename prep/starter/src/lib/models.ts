@@ -44,7 +44,7 @@ export const MODELS: ModelInfo[] = [
     openWeights: true,
   },
   {
-    id: 'accounts/fireworks/models/deepseek-v3',
+    id: 'accounts/fireworks/models/deepseek-v3p1',
     name: 'DeepSeek V3',
     provider: 'fireworks',
     contextWindow: 131072,
@@ -96,8 +96,7 @@ export const MODELS: ModelInfo[] = [
     openWeights: true,
   },
   {
-    // Verify exact model ID on fireworks.ai/models — shown as "Kimi K2.6" on Fireworks dashboard
-    id: 'accounts/fireworks/models/kimi-k2-instruct',
+    id: 'accounts/fireworks/models/kimi-k2-instruct-0905',
     name: 'Kimi K2',
     provider: 'fireworks',
     contextWindow: 131072,
@@ -110,9 +109,8 @@ export const MODELS: ModelInfo[] = [
     openWeights: true,
   },
   {
-    // Verify exact model ID on fireworks.ai/models
-    id: 'accounts/fireworks/models/minimax-text-01',
-    name: 'MiniMax Text-01',
+    id: 'accounts/fireworks/models/minimax-m2p7',
+    name: 'MiniMax M2',
     provider: 'fireworks',
     contextWindow: 1000000,
     inputPricePerMillion: 0.4,

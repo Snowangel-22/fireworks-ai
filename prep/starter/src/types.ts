@@ -65,3 +65,17 @@ export interface ChatStats {
   elapsedMs: number
   isStreaming: boolean
 }
+
+export interface ReRec {
+  loading: boolean
+  modelId?: string
+  modelName?: string
+  rationale?: string
+  reRunStarted?: boolean
+  reRunOutput?: string
+  reRunElapsedMs?: number
+  reRunCostUsd?: number
+  reRunStreaming?: boolean
+  reRunUsage?: TokenUsage | null
+  reRunError?: string
+}

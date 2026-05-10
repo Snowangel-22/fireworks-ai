@@ -563,6 +563,58 @@ html, body, #root { height: 100%; }
 
 .add-prompt-link:hover { color: var(--accent-primary-dim); }
 
+/* ── Collapsible section pill (collapsed state) ────────────────── */
+.section-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.section-pill:hover { background: var(--bg-tint); border-color: var(--accent-primary-soft); }
+
+.section-pill-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.section-pill-sep { color: var(--text-subtle); font-size: 13px; }
+
+.section-pill-summary {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.section-pill-arrow {
+  font-size: 10px;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+}
+
+/* Collapse toggle button inside card-actions */
+.section-collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-subtle);
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+.section-collapse-btn:hover { color: var(--text-muted); background: var(--bg-tint); }
+
 /* ── Fireworks header tint ─────────────────────────────────────── */
 .fw-header {
   color: var(--accent-primary-dim);
@@ -623,6 +675,198 @@ html, body, #root { height: 100%; }
   color: var(--accent-green);
   margin-top: 1px;
 }
+
+/* ── Per-result collapsed pill ─────────────────────────────────── */
+.result-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.result-pill:hover { background: var(--bg-tint); border-color: var(--accent-primary-soft); }
+
+.result-pill-idx {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+}
+
+.result-pill-prompt {
+  font-size: 13px;
+  color: var(--text-primary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result-pill-rating {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.result-pill-rating--good    { background: #dcfce7; color: #166534; }
+.result-pill-rating--partial { background: #fef9c3; color: #854d0e; }
+.result-pill-rating--no      { background: #fee2e2; color: #991b1b; }
+
+.result-pill-savings {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-green);
+  flex-shrink: 0;
+}
+
+/* Collapse toggle inside prompt-result-input */
+.prompt-result-input {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.result-collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--text-subtle);
+  padding: 2px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: color 0.15s;
+}
+.result-collapse-btn:hover { color: var(--text-muted); }
+
+/* ── Rating CTA (replaces old rating-row) ──────────────────────── */
+.rating-cta {
+  padding: 18px 20px;
+  border-top: 2px solid var(--border);
+  background: var(--bg-surface);
+  transition: background 0.2s;
+}
+
+.rating-cta.rated-good    { background: #f0fdf4; border-top-color: var(--accent-green); }
+.rating-cta.rated-partial { background: #fffbeb; border-top-color: var(--accent-amber); }
+.rating-cta.rated-no      { background: #fef2f2; border-top-color: var(--accent-red); }
+
+.rating-cta-label {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.rating-cta-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rating-cta-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.rating-cta-btn:hover { border-color: var(--text-muted); background: var(--bg-tint); }
+
+.rating-cta-btn--good.active    { background: var(--accent-green); border-color: var(--accent-green); color: #fff; }
+.rating-cta-btn--partial.active { background: var(--accent-amber); border-color: var(--accent-amber); color: #fff; }
+.rating-cta-btn--no.active      { background: var(--accent-red);   border-color: var(--accent-red);   color: #fff; }
+
+/* ── Feedback form ─────────────────────────────────────────────── */
+.feedback-form {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback-form-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* ── Re-recommendation card ────────────────────────────────────── */
+.rerec-card {
+  margin-top: 16px;
+  padding: 16px 18px;
+  background: var(--bg-tint);
+  border: 1.5px solid var(--accent-primary-soft);
+  border-radius: var(--radius);
+}
+
+.rerec-loading {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.rerec-header {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+}
+
+.rerec-model {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.rerec-rationale {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+/* ── Re-run result block ───────────────────────────────────────── */
+.rerun-result {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.rerun-result-header {
+  padding: 8px 14px;
+  background: var(--bg-tint);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-primary-dim);
+}
+
+.rerun-result .prompt-result-output { min-height: 48px; }
 
 /* ── CTA block ─────────────────────────────────────────────────── */
 .cta-block {
