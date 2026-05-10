@@ -54,7 +54,7 @@ Aim for ~400-500 words total. Bullets > prose. Section 4 (Tradeoffs) gets the mo
 ### 5. Risks & open questions
 *What would break at scale. What you'd validate with a real customer.*
 
-### 6. What's next
+### 6. What's next, what to build with two more hours
 *2-3 concrete next steps with rough effort sizing.*
 
 ---
