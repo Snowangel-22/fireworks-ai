@@ -31,7 +31,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <span className="app-title">Fireworks PM Starter</span>
+        <span className="app-title">Fireworks APM Assignment</span>
         <span className="app-tagline">
           Scaffold ready. Replace this screen with your assignment build.
         </span>
