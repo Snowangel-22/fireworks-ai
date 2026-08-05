@@ -8,42 +8,42 @@ export interface Recommendation {
 }
 
 // Hardcoded top-3 per use case — transparent, auditable, zero API calls.
-// Rationale is shown directly in the UI. Update on assignment day if new models land.
+// All IDs verified against this account's available models on 2026-08-04.
 const RANKINGS: Record<TaskTag, Array<{ id: string; rationale: string }>> = {
   chat: [
-    { id: 'accounts/fireworks/models/llama-v3p3-70b-instruct', rationale: 'Best balance of quality and speed for conversational AI on Fireworks.' },
-    { id: 'accounts/fireworks/models/qwen2p5-72b-instruct', rationale: 'Strong instruction-following and multilingual chat at 70B quality.' },
-    { id: 'accounts/fireworks/models/kimi-k2-instruct-0905', rationale: 'Frontier-quality responses when nuance or complex reasoning is needed.' },
+    { id: 'accounts/fireworks/models/kimi-k3', rationale: 'Best overall quality for conversational AI on this account — frontier reasoning at open-weights cost.' },
+    { id: 'accounts/fireworks/models/kimi-k2p6', rationale: 'Strong instruction-following and chat at lower cost than K3.' },
+    { id: 'accounts/fireworks/models/deepseek-v4-flash', rationale: 'Fastest and cheapest option when latency and volume matter more than peak quality.' },
   ],
   reasoning: [
-    { id: 'accounts/fireworks/models/kimi-k2-instruct-0905', rationale: 'Frontier reasoning model — matches or exceeds GPT-4o quality at open-weights cost.' },
-    { id: 'accounts/fireworks/models/llama-v3p1-405b-instruct', rationale: 'Deepest reasoning in the Llama family; strong benchmark performance.' },
-    { id: 'accounts/fireworks/models/deepseek-v3', rationale: 'Exceptional reasoning and code with one of the best price/quality ratios on Fireworks.' },
+    { id: 'accounts/fireworks/models/deepseek-v4-pro', rationale: 'Top-tier reasoning and analysis — matches frontier closed models at open-weights cost.' },
+    { id: 'accounts/fireworks/models/kimi-k3', rationale: 'Excellent complex Q&A and multi-step reasoning; strong alternative to DeepSeek Pro.' },
+    { id: 'accounts/fireworks/models/gpt-oss-120b', rationale: 'Large open-source model for the hardest reasoning tasks where size matters.' },
   ],
   code: [
-    { id: 'accounts/fireworks/models/deepseek-v3', rationale: 'State-of-the-art code generation — outperforms GPT-4o on many coding benchmarks.' },
-    { id: 'accounts/fireworks/models/kimi-k2-instruct-0905', rationale: 'Top-tier code completion; particularly strong on complex algorithmic tasks.' },
-    { id: 'accounts/fireworks/models/llama-v3p1-405b-instruct', rationale: 'Frontier-quality code for the hardest problems; higher latency but highest accuracy.' },
+    { id: 'accounts/fireworks/models/kimi-k2p7-code', rationale: 'Purpose-built for code — strongest completion and review accuracy on this account.' },
+    { id: 'accounts/fireworks/models/deepseek-v4-pro', rationale: 'State-of-the-art code generation; particularly strong on algorithmic and systems tasks.' },
+    { id: 'accounts/fireworks/models/kimi-k3', rationale: 'Solid all-around code quality; good when the task mixes code and natural language.' },
   ],
   'function-calling': [
-    { id: 'accounts/fireworks/models/firefunction-v2', rationale: 'Purpose-built for function calling on Fireworks — lowest schema error rate.' },
-    { id: 'accounts/fireworks/models/llama-v3p3-70b-instruct', rationale: 'Strong native tool-use support; good fallback when FireFunction v2 doesn\'t cover your schema.' },
-    { id: 'accounts/fireworks/models/deepseek-v3', rationale: 'Reliable structured output and tool invocation at competitive cost.' },
+    { id: 'accounts/fireworks/models/deepseek-v4-flash', rationale: 'Fast and reliable structured output — lowest latency for tool-use pipelines.' },
+    { id: 'accounts/fireworks/models/deepseek-v4-pro', rationale: 'Highest schema accuracy when tool calls are complex or deeply nested.' },
+    { id: 'accounts/fireworks/models/qwen3p7-plus', rationale: 'Strong JSON and structured output capability with good multilingual function-calling.' },
   ],
   'long-context': [
-    { id: 'accounts/fireworks/models/minimax-text-01', rationale: '1M+ token context window — handles full codebases, books, or long conversation histories.' },
-    { id: 'accounts/fireworks/models/kimi-k2-instruct-0905', rationale: '128k context with frontier reasoning; ideal when long context AND quality both matter.' },
-    { id: 'accounts/fireworks/models/qwen2p5-72b-instruct', rationale: '128k context with solid long-document summarization and extraction.' },
+    { id: 'accounts/fireworks/models/minimax-m2p7', rationale: '1M token context window — handles full codebases, books, or long conversation histories.' },
+    { id: 'accounts/fireworks/models/minimax-m3', rationale: '512k context with better quality than M2.7; ideal when long context AND output quality both matter.' },
+    { id: 'accounts/fireworks/models/kimi-k3', rationale: '128k context with frontier reasoning; best when document length fits and quality is critical.' },
   ],
   multilingual: [
-    { id: 'accounts/fireworks/models/qwen2p5-72b-instruct', rationale: 'Leading multilingual model on Fireworks; top performance across CJK and European languages.' },
-    { id: 'accounts/fireworks/models/kimi-k2-instruct-0905', rationale: 'Frontier multilingual reasoning; strong on non-English tasks requiring nuanced understanding.' },
-    { id: 'accounts/fireworks/models/mixtral-8x7b-instruct', rationale: 'Efficient MoE model with solid multilingual capability at the lowest latency tier.' },
+    { id: 'accounts/fireworks/models/qwen3p7-plus', rationale: 'Leading multilingual model on this account; top performance across CJK and European languages.' },
+    { id: 'accounts/fireworks/models/glm-5p2', rationale: 'Excellent Chinese-language tasks; strong cross-lingual reasoning and generation.' },
+    { id: 'accounts/fireworks/models/kimi-k3', rationale: 'Frontier multilingual reasoning; strong on non-English tasks requiring nuanced understanding.' },
   ],
   summarization: [
-    { id: 'accounts/fireworks/models/llama-v3p3-70b-instruct', rationale: 'High-quality summarization with strong instruction-following; great default choice.' },
-    { id: 'accounts/fireworks/models/qwen2p5-72b-instruct', rationale: 'Excels at multi-document and cross-language summarization tasks.' },
-    { id: 'accounts/fireworks/models/minimax-text-01', rationale: 'Best for summarizing very long documents — handles inputs other models truncate.' },
+    { id: 'accounts/fireworks/models/minimax-m3', rationale: 'Best for long documents — 512k context handles inputs other models truncate.' },
+    { id: 'accounts/fireworks/models/kimi-k3', rationale: 'High-quality summaries with strong instruction-following; great for precision tasks.' },
+    { id: 'accounts/fireworks/models/deepseek-v4-flash', rationale: 'Fastest and cheapest for high-volume summarization pipelines.' },
   ],
 }
 
@@ -59,10 +59,10 @@ export function recommend(useCase: TaskTag): Recommendation[] {
 
 export function topModelId(useCase: TaskTag): string {
   const recs = recommend(useCase)
-  return recs[0]?.model.id ?? 'accounts/fireworks/models/llama-v3p3-70b-instruct'
+  return recs[0]?.model.id ?? 'accounts/fireworks/models/kimi-k3'
 }
 
-const ADVISOR_MODEL = 'accounts/fireworks/models/llama-v3p3-70b-instruct'
+const ADVISOR_MODEL = 'accounts/fireworks/models/deepseek-v4-flash'
 
 export async function aiRecommend(params: {
   useCase: TaskTag

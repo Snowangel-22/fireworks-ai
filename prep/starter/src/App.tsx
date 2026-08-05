@@ -261,7 +261,7 @@ export default function App() {
     }
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })
     const url  = URL.createObjectURL(blob)
-    const a    = Object.assign(document.createElement('a'), { href: url, download: `migration-compass-${useCase ?? 'results'}-${new Date().toISOString().slice(0, 10)}.json` })
+    const a    = Object.assign(document.createElement('a'), { href: url, download: `fireworks-eval-${useCase ?? 'results'}-${new Date().toISOString().slice(0, 10)}.json` })
     document.body.appendChild(a); a.click(); document.body.removeChild(a)
     URL.revokeObjectURL(url)
   }
@@ -279,7 +279,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <span className="app-title">Migration Compass</span>
+        <span className="app-title">Fireworks Model Evaluator</span>
         <span className="app-tagline">Find your Fireworks open-source replacement — with real output comparison</span>
       </header>
 
@@ -656,7 +656,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        Migration Compass · Fireworks AI · Cost anchor: Claude Sonnet 4.6
+        Fireworks Model Evaluator · Fireworks AI · Cost anchor: Claude Sonnet 4.6
       </footer>
     </div>
   )
